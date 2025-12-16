@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<script>
+function goToPage(url) {
+    window.location.href = url;
+}
+</script>
+
+<head>
+  <meta charset="UTF-8">
+  <title>معارض الطايف</title>
+  <style>
+    body {font-family: Tahoma, Arial, sans-serif; margin:0; background:#f5f5f5;}
+    /* الهيدر */
+    header {
+      background:#1a1a1a;
+      color:#fff;
+      padding:15px 25px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .logo {font-size:24px; font-weight:bold;}
+    .nav-links a {
+      color:#fff;
+      text-decoration:none;
+      margin-left:15px;
+      font-size:14px;
+    }
+    .nav-links a:hover {text-decoration:underline;}
+
+    /* البانر */
+    .hero {
+      background:#222 url('banner.jpg') center/cover no-repeat;
+      color:#fff;
+      text-align:right;
+      padding:60px 20px;
+    }
+    .hero-inner {
+      max-width:1100px;
+      margin:0 auto;
+      background:rgba(0,0,0,0.55);
+      padding:20px;
+      border-radius:10px;
+    }
+    .hero h1 {margin:0 0 10px; font-size:26px;}
+    .hero p {margin:0 0 15px; font-size:14px;}
+    .hero .btn {
+      display:inline-block;
+      background:#fdbc2d;
+      color:#000;
+      padding:8px 18px;
+      border-radius:20px;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    /* محتوى الصفحة */
+    .container {
+      max-width:1100px;
+      margin:20px auto;
+      padding:0 15px;
+    }
+
+    .section-title {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:10px;
+    }
+    .section-title h2 {margin:0; font-size:20px;}
+    .section-title span {font-size:13px; color:#777;}
+
+    /* شبكة السيارات */
+    .products {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:15px;
+      margin-top:10px;
+    }
+    .product {
+      background:#fff;
+      border-radius:10px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition:transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .product:hover {
+      transform:translateY(-3px);
+      box-shadow:0 4px 12px rgba(0,0,0,0.18);
+    }
+    .product img {
+      width:100%;
+      height:150px;
+      object-fit:cover;
+    }
+    .product-body {
+      padding:10px 12px 12px;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+    .product-title {
+      font-size:15px;
+      margin:0 0 4px;
+      color:#222;
+    }
+    .product-meta {
+      font-size:12px;
+      color:#777;
+      margin-bottom:6px;
+    }
+    .price-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:auto;
+    }
+    .price {
+      color:#0b8b3b;
+      font-weight:bold;
+      font-size:14px;
+    }
+    .badge {
+      background:#f3f3f3;
+      color:#555;
+      font-size:11px;
+      padding:2px 8px;
+      border-radius:20px;
+    }
+
+    /* الفوتر */
+    footer {
+      text-align:center;
+      padding:12px;
+      background:#111;
+      color:#aaa;
+      font-size:12px;
+      margin-top:25px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header>
+    <div class="logo">معارض الطايف</div>
+    <div class="nav-links">
+      <a href="#cars">السيارات</a>
+      <a href="#offers">العروض</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
+  </header>
+
+  <!-- البانر -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>أفضل عروض السيارات في الطايف</h1>
+      <p>ددسن، كامري، النترا، كابرس وغيرّها من السيارات المختارة بعناية لتناسب احتياجك.</p>
+      <a href="#cars" class="btn">عرض جميع السيارات</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- قسم السيارات -->
+    <div class="section-title" id="cars">
+      <h2>السيارات المتاحة (20)</h2>
+      <span>أسعار تقريبية للعرض في المشروع فقط</span>
+    </div>
+
+    <section class="products">
+      <!-- 1 ددسن -->
+      <div class="product">
+        <img src="car1.jpg" alt="نيسان ددسن 2015">
+        <div class="product-body">
+          <h3 class="product-title">نيسان ددسن 2015</h3>
+          <p class="product-meta">غمارة – قير عادي – بنزين</p>
+          <div class="price-row">
+            <span class="price">32,000 ريال</span>
+            <span class="badge">ددسن</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 ددسن -->
+      <div class="product">
+        <img src="car2.jpg" alt="نيسان ددسن دبل 2016">
+        <div class="product-body">
+          <h3 class="product-title">نيسان ددسن دبل 2016</h3>
+          <p class="product-meta">غمارة – دفع رباعي – للبر</p>
+          <div class="price-row">
+            <span class="price">38,000 ريال</span>
+            <span class="badge">ددسن</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 كامري -->
+      <div class="product">
+        <img src="car3.jpg" alt="تويوتا كامري 2018">
+        <div class="product-body">
+          <h3 class="product-title">تويوتا كامري 2018</h3>
+          <p class="product-meta">سيدان – مكينة 4 سلندر – اقتصادي</p>
+          <div class="price-row">
+            <span class="price">65,000 ريال</span>
+            <span class="badge">كامري</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 كامري -->
+      <div class="product">
+        <img src="car4.jpg" alt="تويوتا كامري 2020">
+        <div class="product-body">
+          <h3 class="product-title">تويوتا كامري 2020</h3>
+          <p class="product-meta">شكل جديد – شاشة – مثبت سرعة</p>
+          <div class="price-row">
+            <span class="price">85,000 ريال</span>
+            <span class="badge">كامري</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 النترا -->
+      <div class="product">
+        <img src="car5.jpg" alt="هيونداي النترا 2017">
+        <div class="product-body">
+          <h3 class="product-title">هيونداي النترا 2017</h3>
+          <p class="product-meta">سيدان – اقتصادية – استخدام يومي</p>
+          <div class="price-row">
+            <span class="price">48,000 ريال</span>
+            <span class="badge">النترا</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 النترا -->
+      <div class="product">
+        <img src="car6.jpg" alt="هيونداي النترا 2020">
+        <div class="product-body">
+          <h3 class="product-title">هيونداي النترا 2020</h3>
+          <p class="product-meta">موديل حديث – كاميرا خلفية – شاشة</p>
+          <div class="price-row">
+            <span class="price">62,000 ريال</span>
+            <span class="badge">النترا</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 كابرس -->
+      <div class="product">
+        <img src="car7.jpg" alt="شفروليه كابرس 2008">
+        <div class="product-body">
+          <h3 class="product-title">شفروليه كابرس 2008</h3>
+          <p class="product-meta">8 سلندر – واسعة – أمريكية</p>
+          <div class="price-row">
+            <span class="price">40,000 ريال</span>
+            <span class="badge">كابرس</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 كابرس -->
+      <div class="product">
+        <img src="car8.jpg" alt="شفروليه كابرس 2010">
+        <div class="product-body">
+          <h3 class="product-title">شفروليه كابرس 2010</h3>
+          <p class="product-meta">فئة فل كامل – جلد – شاشة</p>
+          <div class="price-row">
+            <span class="price">48,000 ريال</span>
+            <span class="badge">كابرس</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 كورولا -->
+      <div class="product">
+        <img src="car9.jpg" alt="تويوتا كورولا 2016">
+        <div class="product-body">
+          <h3 class="product-title">تويوتا كورولا 2016</h3>
+          <p class="product-meta">عملية – قطع غيار متوفرة</p>
+          <div class="price-row">
+            <span class="price">45,000 ريال</span>
+            <span class="badge">كورولا</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 كورولا -->
+      <div class="product">
+        <img src="car10.jpg" alt="تويوتا كورولا 2021">
+        <div class="product-body">
+          <h3 class="product-title">تويوتا كورولا 2021</h3>
+          <p class="product-meta">شكل حديث – أنظمة أمان متقدمة</p>
+          <div class="price-row">
+            <span class="price">70,000 ريال</span>
+            <span class="badge">كورولا</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 سوناتا -->
+      <div class="product">
+        <img src="car11.jpg" alt="هيونداي سوناتا 2019">
+        <div class="product-body">
+          <h3 class="product-title">هيونداي سوناتا 2019</h3>
+          <p class="product-meta">مريحة للخطوط – داخلية فخمة</p>
+          <div class="price-row">
+            <span class="price">75,000 ريال</span>
+            <span class="badge">سوناتا</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 أكسنت -->
+      <div class="product">
+        <img src="car12.jpg" alt="هيونداي أكسنت 2018">
+        <div class="product-body">
+          <h3 class="product-title">هيونداي أكسنت 2018</h3>
+          <p class="product-meta">صغيرة – اقتصادية – مثالية للمدينة</p>
+          <div class="price-row">
+            <span class="price">38,000 ريال</span>
+            <span class="badge">أكسنت</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13 يارس -->
+      <div class="product">
+        <img src="car13.jpg" alt="تويوتا يارس 2019">
+        <div class="product-body">
+          <h3 class="product-title">تويوتا يارس 2019</h3>
+          <p class="product-meta">صرفية ممتازة – استخدام يومي</p>
+          <div class="price-row">
+            <span class="price">42,000 ريال</span>
+            <span class="badge">يارس</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14 أفالون -->
+      <div class="product">
+        <img src="car14.jpg" alt="تويوتا أفالون 2017">
+        <div class="product-body">
+          <h3 class="product-title">تويوتا أفالون 2017</h3>
+          <p class="product-meta">فخمة – مريحة – لمحبي الهدوء</p>
+          <div class="price-row">
+            <span class="price">95,000 ريال</span>
+            <span class="badge">أفالون</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15 تاهو -->
+      <div class="product">
+        <img src="car15.jpg" alt="شفروليه تاهو 2016">
+        <div class="product-body">
+          <h3 class="product-title">شفروليه تاهو 2016</h3>
+          <p class="product-meta">عائلية كبيرة – مناسبة للسفر</p>
+          <div class="price-row">
+            <span class="price">110,000 ريال</span>
+            <span class="badge">تاهو</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16 سوبربان -->
+      <div class="product">
+        <img src="car16.jpg" alt="شفروليه سوبربان 2015">
+        <div class="product-body">
+          <h3 class="product-title">شفروليه سوبربان 2015</h3>
+          <p class="product-meta">مساحة كبيرة للركاب والأمتعة</p>
+          <div class="price-row">
+            <span class="price">100,000 ريال</span>
+            <span class="badge">سوبربان</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17 كامري هايبرد -->
+      <div class="product">
+        <img src="car17.jpg" alt="تويوتا كامري هايبرد 2021">
+        <div class="product-body">
+          <h3 class="product-title">تويوتا كامري هايبرد 2021</h3>
+          <p class="product-meta">هجين – توفير عالي في الوقود</p>
+          <div class="price-row">
+            <span class="price">95,000 ريال</span>
+            <span class="badge">كامري</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18 النترا سبورت -->
+      <div class="product">
+        <img src="car18.jpg" alt="هيونداي النترا سبورت 2019">
+        <div class="product-body">
+          <h3 class="product-title">هيونداي النترا سبورت 2019</h3>
+          <p class="product-meta">شكل رياضي – جنوط – فتحة سقف</p>
+          <div class="price-row">
+            <span class="price">70,000 ريال</span>
+            <span class="badge">النترا</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19 ددسن غمارتين -->
+      <div class="product">
+        <img src="car19.jpg" alt="نيسان ددسن غمارتين 2014">
+        <div class="product-body">
+          <h3 class="product-title">نيسان ددسن غمارتين 2014</h3>
+          <p class="product-meta">غمارتين – مناسب للعائلة والعمل</p>
+          <div class="price-row">
+            <span class="price">36,000 ريال</span>
+            <span class="badge">ددسن</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20 كابرس SS -->
+      <div class="product">
+        <img src="car20.jpg" alt="شفروليه كابرس SS 2009">
+        <div class="product-body">
+          <h3 class="product-title">شفروليه كابرس SS 2009</h3>
+          <p class="product-meta">محرك قوي – أداء عالي – رياضية</p>
+          <div class="price-row">
+            <span class="price">55,000 ريال</span>
+            <span class="badge">كابرس</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- قسم تواصل بسيط -->
+    <div id="contact" style="margin-top:30px; font-size:13px; color:#555;">
+      <strong>تواصل مع معارض الطايف (للمشروع فقط):</strong>
+      <p>جوال: 0500000000 – البريد: example@example.com</p>
+    </div>
+  </main>
+
+ 
+
+<footer>
+    <a href="https://binsam-neon.vercel.app/secret.html" target="_blank" style="color:#aaa; text-decoration:none; cursor:pointer">
+        هذا رابط حي
+    </a>
+    <br>
+    معرض الطائف
+    &copy;
+</footer>
+
+</body>
+</html>
